@@ -1,6 +1,6 @@
 const axios = require("axios");
 const cron = require("node-cron");
-var express = require('express');
+var express = require("express");
 
 const data = {
   data: {
@@ -16,7 +16,7 @@ const data = {
 const makeReqs = async () => {
   try {
     const proms = [];
-    for (let i = 0; i < 2500; i++) {
+    for (let i = 0; i < 500; i++) {
       proms.push(
         new Promise((a, r) => {
           axios
@@ -55,13 +55,8 @@ cron.schedule("* * * * *", function () {
 
 var app = express();
 
-app.get('/', function (req, res) {
-   res.send('Hello World');
-})
+app.get("/", function (req, res) {
+  res.send("Hello World");
+});
 
-var server = app.listen(8081, function () {
-   var host = server.address().address
-   var port = server.address().port
-   
-   console.log("Example app listening at http://%s:%s", host, port)
-})
+var server = app.listen(process.env.PORT || 5000);
