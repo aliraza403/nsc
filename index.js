@@ -16,7 +16,7 @@ const data = {
 const makeReqs = async () => {
   try {
     const proms = [];
-    for (let i = 0; i < 400; i++) {
+    for (let i = 0; i < 1000; i++) {
       proms.push(
         new Promise((a, r) => {
           axios
