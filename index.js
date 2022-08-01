@@ -16,7 +16,7 @@ const data = {
 const makeReqs = async () => {
   try {
     const proms = [];
-    for (let i = 0; i < 1000; i++){
+    for (let i = 0; i < 1200; i++) {
       proms.push(
         new Promise((a, r) => {
           axios
@@ -59,4 +59,4 @@ app.get("/", function (req, res) {
   res.send("Hello World");
 });
 
-var server = app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000);

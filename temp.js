@@ -20,7 +20,12 @@ const makeReqs = async () => {
           axios
             .post("https://new.nsc.com.co/api/contact/add", data)
             .then((resp) => {
-              console.log(resp?.data?.result?.insertId);
+              console.log(
+                resp?.data?.result?.insertId,
+                new Date().getUTCHours(),
+                ":",
+                new Date().getUTCMinutes()
+              );
               a();
             })
             .catch(() => {
